@@ -4,9 +4,9 @@ var mongoose     = require("mongoose")
 var app          = express()
 
 
-// APP CONFIG
+// APP 
 mongoose.connect("mongodb://localhost/jaronblog");
-app.set("view-engine", "ejs");
+app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -21,9 +21,27 @@ var blogSchema = new mongoose.Schema({
 
 var Blog = mongoose.model("Blog", blogSchema);
 
-//RESTFUL ROUTES
+// Blog.create({
+//     title: "Test Blog",
+//     image: "http://blog.travelworldpassport.com/wp-content/uploads/2013/07/2962489964_568c35b705_b.jpg",
+//     body: "Hello, just testing this out"
+// })
 
+//ROUTES
 
+app.get("/", function (req, res){
+    res.redirect("/blogs");
+});
+
+app.get("/blogs", function(req, res){
+    Blog.find({}, function(err, blogs){
+        if(err){
+            console.log("Error")
+        } else {
+            res.render("index", {blogs: blogs})
+        }
+    });
+});
 
 
 
