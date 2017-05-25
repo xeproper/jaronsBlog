@@ -1,0 +1,16 @@
+{
+  "name": "jaronblog",
+  "version": "1.0.0",
+  "description": "A simple blog to practice my coding",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jaron Tietsort",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.2"
+  }
+}
