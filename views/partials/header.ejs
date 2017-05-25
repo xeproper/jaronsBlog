@@ -2,14 +2,32 @@
     <head>
         <title>Jaron's Blog</title>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
-        <link rel="stylesheet" type="text/css" href="stylesheets/app.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
     </head>
     <body>
-        <div class="ui borderless small olive fixed inverted menu">
-            <div class="ui container">
-                <div class="header item"><i class="terminal icon"></i>Jaron's Blog</div>
-                <a href="/" class="item"> Home</a>
-                <a href="/blogs/new" class="item"> New Post</a>
-                <a href="/jaron" class="item"> Who is Jaron?</a>
+        
+  <div class="ui fixed inverted menu borderless">∂
+    <div class="ui container">
+      <a href="/" class="header item"><i class="terminal icon"></i>Jaron's Blog</a>
+      <a href="/" class="item">Home</a>
+      <div class="ui simple dropdown item">More.. <i class="dropdown icon"></i><div class="menu">
+          <a class="item" href="#">Who is Jaron?</a>
+          <a class="item" href="#">Link Item</a>
+          <div class="divider"></div>
+          <div class="header">Header Item</div>
+          <div class="item">
+            <i class="dropdown icon"></i>
+            Sub Menu
+            <div class="menu">
+              <a class="item" href="#">Link Item</a>
+              <a class="item" href="#">Link Item</a>
             </div>
+          </div>
+          <a class="item" href="#">Link Item</a>
         </div>
+      </div>
+          <a href="/blogs/new" class="item">New Blog</a> 
+    </div>
+  </div>
+

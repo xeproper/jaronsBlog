@@ -28,7 +28,7 @@ var Blog = mongoose.model("Blog", blogSchema);
 // })
 
 //ROUTES
-
+// INDEX ROUTE
 app.get("/", function (req, res){
     res.redirect("/blogs");
 });
@@ -43,7 +43,21 @@ app.get("/blogs", function(req, res){
     });
 });
 
+//NEW ROUTE
+app.get("/blogs/new", function(req, res){
+    res.render("new");
+})
 
+// CREATE ROUTE
+app.post("/blogs", function(req, res){
+    Blog.create(req.body.blog, function(err, newBlog){
+        if(err){
+            res.render("new")
+        } else {
+            res.redirect("/blogs")
+        }
+    });
+});
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server is Running!")
