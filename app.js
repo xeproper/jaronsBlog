@@ -2,6 +2,7 @@ var express      = require("express");
 var bodyParser   = require("body-parser");
 var mongoose     = require("mongoose")
 var app          = express()
+var moment       = require("moment")
 
 
 // APP 
@@ -11,7 +12,9 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 
 
+
 // MONGOOSE/MODEL CONFIG
+
 var blogSchema = new mongoose.Schema({
     title: String,
     image: String,
@@ -56,6 +59,17 @@ app.post("/blogs", function(req, res){
         } else {
             res.redirect("/blogs")
         }
+    });
+});
+
+// SHOW ROUTE
+app.get("/blogs/:id", function(req, res){
+    Blog.findById(req.params.id, function(err, foundBlog){
+        if(err){
+            res.redirect("/blogs")
+        } else {
+          res.render("show", {blog: foundBlog});  
+        } 
     });
 });
 
