@@ -11,7 +11,8 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 
-
+// Pass stuff to all apps
+app.locals.moment = require("moment");
 
 // MONGOOSE/MODEL CONFIG
 

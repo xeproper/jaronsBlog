@@ -7,7 +7,7 @@
             <img class="ui centered rounded image" src="<%=blog.image %>">
         </div>
         <div class="content">
-            <span><%= blog.created.toDateString() %></span>
+            <span><%= moment(blog.created).format('ll') %></span>
         </div>
         <div class="description">
             <p><%- blog.body %></p>

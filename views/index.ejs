@@ -4,7 +4,7 @@
     <div>
         <h2><%=blog.title%></h2>
         <img src="<%=blog.image %>">
-        <span><%= blog.created %></span>
+        <span><%= moment(blog.created).format('ll') %></span>
         <% if(blog.body && blog.body.length > 0) { %>
         <p><%= blog.body.substring(0, 100)%>...</p>
         <% } %>
