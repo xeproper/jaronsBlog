@@ -9,3 +9,15 @@ i.icon {
 #footerImage {
     font-size: 1.8em;
 }
+
+#delete {
+    display: inline;
+}
+
+.ui.top.attached.segment {
+    margin-bottom: 25px;
+}
+
+#header {
+    padding-top: 0px;
+}
