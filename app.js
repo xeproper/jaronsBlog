@@ -51,6 +51,11 @@ app.get("/blogs", function(req, res){
     });
 });
 
+//About Me Route
+app.get("/aboutme", function(req, res){
+   res.render("aboutme") 
+});
+
 //NEW ROUTE
 app.get("/blogs/new", function(req, res){
     res.render("new");
